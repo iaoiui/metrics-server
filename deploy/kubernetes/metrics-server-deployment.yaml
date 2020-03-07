@@ -42,6 +42,11 @@ spec:
           runAsNonRoot: true
           runAsUser: 1000
         imagePullPolicy: IfNotPresent
+        command:
+         - /metrics-server
+         - --v=4
+         - --kubelet-insecure-tls
+         - --kubelet-preferred-address-types=InternalIP
         volumeMounts:
         - name: tmp-dir
           mountPath: /tmp
